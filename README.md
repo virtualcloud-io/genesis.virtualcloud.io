@@ -42,8 +42,8 @@ To see it in action visit [genesis.virtualcloud.io](http://genesis.virtualcloud.
 FAQ
 ===
 
-Why JSON and not JavaScript for Configuration
----------------------------------------------
+Why JSON and not JavaScript for Configuration?
+----------------------------------------------
 
 You cannot *declare* javascript. You have to code and run it.
 

@@ -1,0 +1,54 @@
+{
+    "@args": {
+        "PGS_WORKSPACE_ROOT": "",
+        "PGS_PACKAGES_DIRPATH": "",
+        "install": false,
+        "packs": {
+            "local": {},
+            "remote": {}
+        }
+    },
+    "config": {
+        "github.com/pinf-io/io.pinf.pio.profile/0": {
+            "$depends": [
+                "io.virtualcloud.genesis"
+            ]
+        },
+        "github.com~virtualcloud-io~virtualcloud-for-pio.profile~0": {
+            "$to": "io.virtualcloud.genesis"
+        },
+        "github.com/pinf-to/pinf-to-process/0": {
+            "$to": {
+                "virtualcloud-for-pio.profile-service": {
+                    "basePath": "{{$.@args.PGS_PACKAGES_DIRPATH}}/github.com~virtualcloud-io~virtualcloud-for-pio.profile~0/source/installed/master",
+                    "commands": {
+                        "start": "node server.js"
+                    },
+                    "boot": {
+                        "config": "virtualcloud-for-pio.profile/0"
+                    },
+                    "config": {
+                        "virtualcloud-for-pio.profile/0": {
+                            "port": 8085,
+                            "bind": "127.0.0.1",
+                            "packs": "{{$.@args.packs.local}}"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "mappings": {
+        "./../.deps/github.com~virtualcloud-io~virtualcloud-for-pio.profile~0/source/installed/master": {
+            "location": "{{__DIRNAME__}}/../.deps/github.com~virtualcloud-io~virtualcloud-for-pio.profile~0/source/installed/master",
+            "install": false
+        },
+        "virtualcloud-for-pio.profile": {
+            "depends": [
+                "org.pinf.genesis.lib"
+            ],
+            "location": "{{__DIRNAME__}}/../.deps/github.com~virtualcloud-io~virtualcloud-for-pio.profile~0/source/installed/master",
+            "install": "{{$.@args.install}}"
+        }
+    }
+}
