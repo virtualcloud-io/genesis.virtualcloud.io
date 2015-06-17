@@ -36,14 +36,14 @@ Use
 
 This project is not yet ready for independent use although that is the goal.
 
-To see it in action visit [genesis.virtualcloud.io](http://genesis.virtualcloud.io) for templates and install (core.open.genesis.ginseng.io)[http://core.open.genesis.ginseng.io] which provides a visual UI for VirtualCloud and access to all available features.
+To see it in action visit [genesis.virtualcloud.io](http://genesis.virtualcloud.io) for templates and install [core.open.genesis.ginseng.io](http://core.open.genesis.ginseng.io) which provides a visual UI for VirtualCloud and access to all available features.
 
 
 FAQ
 ===
 
-Why JSON and not JavaScript
----------------------------
+Why JSON and not JavaScript for Configuration
+---------------------------------------------
 
 You cannot *declare* javascript. You have to code and run it.
 
