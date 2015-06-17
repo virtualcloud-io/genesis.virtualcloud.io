@@ -1,0 +1,17 @@
+{
+    "@extends": {
+        "io.ginseng.genesis.open.core/PINF.proto.json": "{{__DIRNAME__}}/PINF.proto.json"
+    },
+    "config": {
+        "ScriptedCloud.PINF.Tools/0": {
+            "topLevelDomain": "virtualcloud.io",
+            "hostname": "{{env.PGS_WORKSPACE_UID}}.genesis.virtualcloud.io",
+            "dirname": "genesis.virtualcloud.io~{{env.PGS_WORKSPACE_UID}}",
+            "privateKeyPath": "{{env.HOME}}/.ssh/genesis.virtualcloud.io-{{env.PGS_WORKSPACE_UID}}.rsa"
+        }
+    },
+    "mappings": {},
+    "@overlays": [
+        "{{env.PIO_PROFILE_PATH}}"
+    ]
+}
