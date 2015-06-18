@@ -15,7 +15,21 @@
             ]
         },
         "github.com~virtualcloud-io~virtualcloud-for-pio.profile~0": {
-            "$to": "io.virtualcloud.genesis"
+            "$to": "io.virtualcloud.genesis",
+            "$depends": [
+                "virtualcloud-for-pio.profile-service"
+            ],
+            "server": {
+                "baseUrl": "http://127.0.0.1:8099"
+            },
+            "profile": {
+                "stores": {
+                    "@copy": "{{$from.profile.stores}}"
+                },
+                "files": {
+                    "@copy": "{{$from.profile.files}}"
+                }
+            }
         },
         "github.com/pinf-to/pinf-to-process/0": {
             "$to": {
@@ -29,9 +43,13 @@
                     },
                     "config": {
                         "virtualcloud-for-pio.profile/0": {
-                            "port": 8085,
+                            "port": 8099,
                             "bind": "127.0.0.1",
-                            "packs": "{{$.@args.packs.local}}"
+                            "session": {
+                                "secret": "TODO-SET-SECRET"
+                            },
+                            "passport": {                                
+                            }
                         }
                     }
                 }

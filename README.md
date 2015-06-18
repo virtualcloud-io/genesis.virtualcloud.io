@@ -15,6 +15,12 @@ When applications are distributed some important questions arise:
   * How many operational people is the application dependent on?
   * Which geographic region is the application dependent on?
   * Which technologies is the application dependent on?
+  * Which physical servers is the application dependent on?
+  * Which physical networks is the application dependent on?
+  * What is the latency between data stores and application edges?
+  * What is the boot time for the app on a certain device when used in cold temperatures?
+  * Where is all the above stored and documented?
+  * Can one person have insight into all the above and make changes as needed?
 
 All these factors and many more impact the extent to which an application is **Sound & Robust**.
 
@@ -24,7 +30,7 @@ All these factors and many more impact the extent to which an application is **S
   * A root JSON config object for the entire distribution
   * Declared contracts for all outside resources and APIs
   * Hash-based integrity verification
-  * Cryptographic-based identity verification & security
+  * Cryptographic identity verification & security
   * Nested & linked JSON configurations to accomodate complexity
   * Pluggable visualisation of the resulting Semantic Web using Web Components
 

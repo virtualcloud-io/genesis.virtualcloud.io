@@ -1,12 +1,13 @@
 {
     "@extends": {
-        "genesis.virtualcloud.io/PINF.core.json": "{{__DIRNAME__}}/PINF.core.json",
+        "genesis.virtualcloud.io/PINF.core.json": "{{__DIRNAME__}}/PINF.core.json"
+    },
+    "DISABLED_@extends": {
         "virtualcloud-for-pio.profile": {
             "location": "{{__DIRNAME__}}/PINF.proto/virtualcloud-for-pio.profile~0.proto.json",
             "@args": {
                 "PGS_WORKSPACE_ROOT": "{{env.PGS_WORKSPACE_ROOT}}",
-                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}",
-                "install": true
+                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}"
             }
         }
     }
