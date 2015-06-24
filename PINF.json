@@ -2,7 +2,7 @@
     "@extends": {
         "genesis.virtualcloud.io": "{{__DIRNAME__}}/PINF.proto.json"
     },
-    "DISABLED_@extends": {        
+    "DISABLED_@extends": {
         "virtualcloud-for-pio.profile": {
             "@args": {
                 "install": true
