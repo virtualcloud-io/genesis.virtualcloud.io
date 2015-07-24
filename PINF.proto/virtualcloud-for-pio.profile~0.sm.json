@@ -1,0 +1,15 @@
+{
+    "@github.com~sourcemint~sm.expand~0/map": {
+        "sources": {
+            "github.com~virtualcloud-io~virtualcloud-for-pio.profile~0": {
+                "master": {
+                    "uri": "git://git@github.com:virtualcloud-io/virtualcloud-for-pio.profile.git",
+                    "installer": "npm"
+                }
+            }
+        },
+        "mappings": {
+            "virtualcloud-for-pio.profile": "github.com~virtualcloud-io~virtualcloud-for-pio.profile~0/master"
+        }
+    }
+}

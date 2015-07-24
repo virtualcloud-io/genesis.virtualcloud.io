@@ -1,12 +1,5 @@
 {
     "@extends": {
         "devcomp.org": "/pinf.genesis/04-devcomp.org/PINF.proto.json"
-    },
-    "config": {
-        "ScriptedCloud.PINF.Tools/boot/0": {
-            "$depends": [
-                "devcomp.org-dev-local"
-            ]
-        }
     }
 }

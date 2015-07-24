@@ -1,13 +1,7 @@
 {
     "@extends": {
-        "genesis.virtualcloud.io": "{{__DIRNAME__}}/PINF.proto.json"
-    },
-    "DISABLED_@extends": {
-        "virtualcloud-for-pio.profile": {
-            "@args": {
-                "install": true
-            }
-        }
+        "genesis.virtualcloud.io": "{{__DIRNAME__}}/PINF.proto.json",
+        "genesis.virtualcloud.io/PINF.proto/virtualcloud-for-pio.profile~0.sm.json": "{{__DIRNAME__}}/PINF.proto/virtualcloud-for-pio.profile~0.sm.json"
     },
     "boot": {
         "config": "ScriptedCloud.PINF.Tools/boot/0"

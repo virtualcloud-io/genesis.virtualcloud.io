@@ -1,0 +1,80 @@
+{
+    "@args": {
+    },
+    "config": {
+        "github.com/pinf-io/io.pinf.pio.profile/0": {
+            "$depends": [
+                "io.virtualcloud.genesis"
+            ]
+        },
+        "github.com~virtualcloud-io~virtualcloud-for-pio.profile~0": {
+            "$to": "io.virtualcloud.genesis",
+            "$depends": [
+                "virtualcloud-for-pio.profile-service"
+            ],
+            "server": {
+                "baseUrl": "http://{{$from['services-proxy'].config['io.pinf.proxy/0'].bind}}:{{$from['services-proxy'].config['io.pinf.proxy/0'].port}}/io.virtualcloud.impl.virtualcloud-for-pio.profile"
+            },
+            "profile": {
+                "stores": {
+                    "@copy": "{{$from.profile.stores}}"
+                },
+                "files": {
+                    "@copy": "{{$from.profile.files}}"
+                }
+            }
+        },
+        "github.com/pinf-to/pinf-to-process/0": {
+            "$to": {
+                "services-proxy": {
+                    "config": {
+                        "io.pinf.proxy/0": {
+                            "services": {
+                                "io.virtualcloud.impl.virtualcloud-for-pio.profile": {
+                                    "implementation": "VIRTUALCLOUD_FOR_PIO_PROFILE"
+                                }
+                            },
+                            "config": {
+                                "org.pinf.genesis.lib/0": {
+                                    "api": {
+                                        "consumes": {
+                                            "VIRTUALCLOUD_FOR_PIO_PROFILE": "virtualcloud-for-pio.profile/0/server"
+                                        }
+                                    }
+                                }                                
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "github.com/pinf-io/io.pinf.pio.sync/0": {
+            "$to": {
+                "pio-sync-services": {
+                    "services": {
+                        "io.pinf.proxy": {
+                            "config": {
+                                "io.pinf.proxy/0": {
+                                    "services": {
+                                        "io.virtualcloud.impl.virtualcloud-for-pio.profile": {
+                                            "implementation": "VIRTUALCLOUD_FOR_PIO_PROFILE"
+                                        }
+                                    },
+                                    "config": {
+                                        "org.pinf.genesis.lib/0": {
+                                            "api": {
+                                                "consumes": {
+                                                    "VIRTUALCLOUD_FOR_PIO_PROFILE": "virtualcloud-for-pio.profile/0/server"
+                                                }
+                                            }
+                                        }                            
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
