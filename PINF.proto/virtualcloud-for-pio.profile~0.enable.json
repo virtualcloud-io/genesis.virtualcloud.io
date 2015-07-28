@@ -7,20 +7,27 @@
                 "io.virtualcloud.genesis"
             ]
         },
+        "github.com/pinf-tools/CloudCommands/0": {
+            "$depends": [
+                "io.virtualcloud.genesis"
+            ]
+        },
         "github.com~virtualcloud-io~virtualcloud-for-pio.profile~0": {
             "$to": "io.virtualcloud.genesis",
             "$depends": [
-                "virtualcloud-for-pio.profile-service"
+                "services-proxy"
             ],
-            "server": {
-                "baseUrl": "http://{{$from['services-proxy'].config['io.pinf.proxy/0'].bind}}:{{$from['services-proxy'].config['io.pinf.proxy/0'].port}}/io.virtualcloud.impl.virtualcloud-for-pio.profile"
-            },
-            "profile": {
-                "stores": {
-                    "@copy": "{{$from.profile.stores}}"
-                },
-                "files": {
-                    "@copy": "{{$from.profile.files}}"
+            "tools.pinf.CloudCommands/commands/0": {
+                "commands": {
+                    "root.space.login": {
+                        "@impl": "virtualcloud-for-pio.profile/command-login/0",
+                        "virtualcloud-for-pio.profile/vct-request/0": {
+                            "server": {
+                                "baseUrl": "http://{{$from.services-proxy.config['io.pinf.proxy/0'].bind}}:{{$from.services-proxy.config['io.pinf.proxy/0'].port}}/io.virtualcloud.impl.virtualcloud-for-pio.profile",
+                                "certificateKey": "6AE41277-F277-4B43-B47C-33D82E97F186"
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -41,7 +48,32 @@
                                             "VIRTUALCLOUD_FOR_PIO_PROFILE": "virtualcloud-for-pio.profile/0/server"
                                         }
                                     }
-                                }                                
+                                }
+                            }
+                        },
+                        "virtualcloud-for-pio.profile/0": {
+                            "session": {
+                                "cookieSecret": "<REPLACE>",
+                                "cookiePath": "/io.virtualcloud.impl.virtualcloud-for-pio.profile",
+                                "certificates": {
+                                    "6AE41277-F277-4B43-B47C-33D82E97F186": {
+                                        "services": {
+                                            "virtualcloud": {
+                                                "scopes": {}
+                                            },
+                                            "github": {
+                                                "scopes": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "passport": {
+                                "github": {
+                                    "configUrl": "<REPLACE>",
+                                    "clientID": "<REPLACE>",
+                                    "clientSecret": "<REPLACE>"
+                                }
                             }
                         }
                     }
