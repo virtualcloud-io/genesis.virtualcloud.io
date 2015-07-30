@@ -1,6 +1,6 @@
 {
     "@extends": {
-        "devcomp.org": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-tools~ScriptedCloud~0/source/installed/master/PINF.proto.json"
+        "devcomp.org": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~devcomp~devcomp.org~0/source/installed/master/PINF.proto.json"
     },
     "@github.com~sourcemint~sm.expand~0/map": {
         "sources": {
@@ -11,7 +11,7 @@
             }
         },
         "mappings": {
-            "github.com~devcomp~devcomp.org": "github.com~devcomp~devcomp.org~0/master",
+            "github.com~devcomp~devcomp.org": "github.com~devcomp~devcomp.org~0/master"
         }
     }
 }
